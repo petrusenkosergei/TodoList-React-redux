@@ -1,0 +1,370 @@
+:root {
+  /*--main-color: #2e354b;*/
+  --main-color: #03A9F4;
+  /*--main-color: #BEC6CA;*/
+  /*--main-color: #33CCCC;*/
+
+  /*--main-color:#59baf6;*/
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fbfbfb;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 70px;
+}
+
+.new-todoList {
+  position: relative;
+  z-index: 1;
+}
+
+.create-todoList {
+  position: absolute;
+  z-index: 1;
+  top: 36px;
+  right: 30px;
+}
+
+.create-todoList-btn, .create-todoList > input {
+  padding: 0 15px;
+  height: 36px;
+  border: 2px solid #b3b3b3;
+
+  background-color: transparent;
+  border-radius: 4px;
+  font-weight: 500;
+  outline: 1px solid transparent;
+}
+
+
+.create-todoList > input {
+  background-color: #fbfbfb;
+  margin-right: 10px;
+  width: 230px;
+  color: black;
+}
+
+.create-todoList > input::placeholder {
+  font-size: 14px;
+  color: #b3b3b3;
+  font-weight: 400;
+}
+
+.create-todoList > input:focus {
+  background-color: #fff;
+}
+
+.create-todoList-btn:hover {
+  color: var(--main-color);
+  background-color: #fff;
+  font-weight: 500;
+}
+
+.App:after {
+  content: "ToDo List";
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  line-height: 3.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 110px;
+  background-color: var(--main-color);
+}
+
+.todoList {
+  width: 430px;
+  height: max-content;
+  margin: 90px 35px 0;
+  position: relative;
+  z-index: 1;
+  box-shadow: 4px 4px 10px 0 rgba(27, 37, 67, 0.15);
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.todoList > div {
+  padding: 30px;
+}
+
+button:focus {
+  outline: 1px solid transparent;
+}
+
+.todoList-header {
+  border-radius: 4px;
+  position: relative;
+}
+
+button.delete-todoList {
+  position: absolute;
+  top: 5px;
+  right: 18px;
+  height: 14px;
+  background-color: transparent;
+  background-size: cover;
+  width: 14px;
+  border: none;
+  background-image: url(./img/close.svg);
+}
+
+button.delete-todoList:hover {
+  background-image: url(./img/close-red.svg);
+}
+
+.todoList-header__title {
+  margin: -21px 0 25px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.todoList-newTaskForm {
+  display: flex;
+}
+
+.todoList-newTaskForm > input {
+  width: 100%;
+
+  border: 1px solid #e7e7e7;
+  height: 32px;
+  border-radius: 4px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin-top: -50px;
+  margin-left: 26px;
+}
+
+
+.todoList-newTaskForm > input::placeholder {
+  color: #c7c7c7;
+}
+
+.todoList-newTaskForm > input:focus {
+  outline: 1px solid transparent;
+  border: 1px solid #b3b3b3;
+}
+
+.todoList-newTaskForm > button {
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background-color: var(--main-color);
+  padding: 0 15px;
+}
+
+.todoList-newTaskForm > button:hover {
+  opacity: 0.8
+}
+
+.todoList-tasks {
+  border-bottom: 1px solid #e7e7e7;
+  border-top: 1px solid #e7e7e7;
+  box-sizing: border-box;
+  padding: 15px 0 !important;
+  position: relative;
+}
+
+.todoList-task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 35px;;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 50px;
+  margin: 1px 0;
+}
+
+.todoList-task:hover {
+  background-color: #f6f7f8;
+}
+
+.todoList-task:hover button {
+  visibility: visible;
+}
+
+.task {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.task > input[type="checkbox"] {
+  align-self: flex-start;
+}
+
+.task-title {
+  margin-left: 10px;
+  width: 100%;
+}
+
+.task-title > input {
+  width: 100%;
+  border: 1px solid #e7e7e7;
+  height: 28px;
+  border-radius: 4px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  outline: 1px solid transparent;
+  display: none;
+}
+
+.task-title > span {
+  max-width: 270px;
+}
+
+.task-buttons {
+  display: flex;
+}
+
+.todoList-task > div > span {
+  margin-left: 10px;
+}
+
+.todoList-task > div > button {
+  height: 18px;
+  background-color: transparent;
+  background-size: cover;
+  width: 18px;
+  border: none;
+  margin-left: 15px;
+
+}
+
+.todoList-task > div > button.confirm-task {
+  padding: 4px 14px;
+  background-color: var(--main-color);
+  display: none;
+  height: inherit;
+  width: inherit;
+  margin-left: 0;
+  margin-right: 6px;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.todoList-task > div > button.confirm-task:hover {
+  opacity: 0.8;
+}
+
+.delete-task {
+  background-image: url(./img/bin.svg);
+  visibility: hidden;
+}
+
+.delete-task:hover {
+  background-image: url(./img/bin-h.svg);
+}
+
+.edit-task {
+  background-image: url(./img/edit.svg);
+  visibility: hidden;
+}
+
+.edit-task:hover {
+  background-image: url(./img/edit-h.svg);
+}
+
+
+/*--------------------------Styles for confirm task--------------------------*/
+
+.todoList-task.editable {
+  background-color: #f6f7f8;
+}
+
+.todoList-task.editable .task-title > input {
+  display: block;
+}
+
+.todoList-task.editable .task-title > span {
+  display: none;
+}
+.todoList-task.editable .task-buttons .edit-task,
+.todoList-task.editable .task-buttons .delete-task {
+  display: none;
+}
+.todoList-task.editable .task-buttons .confirm-task {
+  display: block;
+}
+
+
+.todoList-footer > button {
+  height: 32px;
+  border-radius: 4px;
+  padding: 0 15px;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  background-color: transparent;
+  margin: 0 10px;
+}
+
+.todoList-footer {
+  display: flex;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.todoList-footer > button:hover {
+  color: white;
+  background-color: var(--main-color);
+}
+
+@media (max-width: 535px) {
+  .App:after {
+    content: "";
+  }
+  .create-todoList {
+    right: unset;
+  }
+}
+
+@media (max-width: 830px) {
+  .App:after {
+    text-align: start;
+    height: 110px;
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 1156px) {
+  .todoList {
+    margin-bottom: -40px
+  }
+
+}
+
+
+
+
+/*.todoList-task.done {*/
+/*  opacity: 0.5;*/
+/*}*/
+
+/*.filter-active {*/
+/*  background-color: blue;*/
+/*}*/
+
+.error {
+  border-color: red;
+}
